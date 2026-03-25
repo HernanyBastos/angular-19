@@ -1,0 +1,70 @@
+{
+"livros": [
+    {
+        "id": 1,
+        "titulo": "O Hobbit",
+        "autoria": "J.R.R. Tolkien",
+        "capa": "https://m.media-amazon.com/images/I/91zdxRRvabL._UF1000,1000_QL80_.jpg",
+        "genero": {
+            "id": "fantasia",
+            "value": "Fantasia"
+        },
+        "favorito": false
+    },
+    {
+        "id": 2,
+        "titulo": "O Senhor dos Anéis",
+        "autoria": "J.R.R. Tolkien",
+        "capa": "https://m.media-amazon.com/images/I/91zdxRRvabL._UF1000,1000_QL80_.jpg",
+        "genero": {
+            "id": "fantasia",
+            "value": "Fantasia"
+        },
+        "favorito": false
+    },
+    {
+        "id": 3,
+        "titulo": "O Silmarillion",
+        "autoria": "J.R.R. Tolkien",
+        "capa": "https://m.media-amazon.com/images/I/91zdxRRvabL._UF1000,1000_QL80_.jpg",
+        "genero": {
+            "id": "fantasia",
+            "value": "Fantasia"
+        },
+        "favorito": false
+    },
+    {
+        "id": 4,
+        "titulo": "O Código Da Vinci",
+        "autoria": "Dan Brown",
+        "capa": "https://m.media-amazon.com/images/I/91zdxRRvabL._UF1000,1000_QL80_.jpg",
+        "genero": {
+            "id": "suspense",
+            "value": "Suspense"
+        },
+        "favorito": false
+    },
+    {
+        "id": 5,
+        "titulo": "Anjos e Demônios",
+        "autoria": "Dan Brown",
+        "capa": "https://m.media-amazon.com/images/I/91zdxRRvabL._UF1000,1000_QL80_.jpg",
+        "genero": {
+            "id": "suspense",
+            "value": "Suspense"
+        },
+        "favorito": false
+    },
+    {
+        "id": 6,
+        "titulo": "Inferno",
+        "autoria": "Dan Brown",
+        "capa": "https://m.media-amazon.com/images/I/91zdxRRvabL._UF1000,1000_QL80_.jpg",
+        "genero": {
+            "id": "suspense",
+            "value": "Suspense"
+        },
+        "favorito": false
+    }
+]
+}
