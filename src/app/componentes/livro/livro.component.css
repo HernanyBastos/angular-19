@@ -33,6 +33,10 @@ section {
   border-color: #FF8A29;
 }
 
+.suspense {
+  border-color: #ff2929;
+}
+
 section .info-livro {
   flex-grow: 1;
   display: flex;

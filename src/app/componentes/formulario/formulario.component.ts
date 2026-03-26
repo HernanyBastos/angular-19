@@ -10,6 +10,7 @@ import { BotaoComponent } from '../botao/botao.component';
 import { DivisorComponent } from '../divisor/divisor.component';
 import { TituloComponent } from '../titulo/titulo.component';
 import { SubtituloComponent } from '../subtitulo/subtitulo.component';
+import { LivroService } from '../../services/livro.service';
 
 @Component({
   selector: 'app-formulario',
@@ -39,6 +40,7 @@ export class FormularioComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private livroService: LivroService
   ) { }
 
   ngOnInit() {
@@ -55,4 +57,16 @@ export class FormularioComponent implements OnInit {
       imagem: ['']
     })
   };
+
+  salvarLivro(){
+    this.livroService.adicionarLivro(this.livroFormulario.value).subscribe( {
+      next: (res: any) => {
+        console.log('Livro adicionado com sucesso', res);
+      },
+      error: (err: any) => {
+        console.error('Erro ao adicionar livro', err);
+      }
+    })
+
+  }
 }

@@ -12,7 +12,7 @@
     <app-estado-vazio></app-estado-vazio>
   }
   <div class="livros-genero">
-    @for(livro of item.livros; track livro) {
+    @for(livro of item.livros; track $index) {
       <app-livro [livro]="livro" />
     }
   </div>

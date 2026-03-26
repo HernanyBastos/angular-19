@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { GeneroLiterario, Livro } from '../componentes/livro/livro';
 
 @Injectable({
@@ -10,13 +10,16 @@ export class LivroService {
 
   private api_URL = 'http://localhost:3000/livros';
 
-    generos: GeneroLiterario[] = [
+  generos: GeneroLiterario[] = [
     { id: 'romance', value: 'Romance' },
     { id: 'misterio', value: 'Mistério' },
     { id: 'fantasia', value: 'Fantasia' },
     { id: 'ficcao-cientifica', value: 'Ficção Científica' },
-    { id: 'tecnicos', value: 'Técnicos' }
+    { id: 'tecnicos', value: 'Técnicos' },
+    { id: 'suspense', value: 'Suspense' }
   ];
+
+  livros: Livro[] = [];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -24,13 +27,25 @@ export class LivroService {
     return this.httpClient.get<Livro[]>(this.api_URL);
   }
 
-    organizarLivrosPorGenero() {
-    this.generosComLivros = this.generos.map((genero) => ({
-      genero,
-      livros: this.livros.filter((livro) => livro.genero.id === genero.id)
+  organizarLivrosPorGenero(): Observable<Map<string, Livro[]>> {
+    return this.obterLivros().pipe(map((livros: Livro[]) => {
+      const generosMap: Map<string, Livro[]> = new Map();
+
+      livros.forEach(livro => {
+        if (!generosMap.has(livro.genero.id)) {
+          generosMap.set(livro.genero.id, []);
+        }
+        generosMap.get(livro.genero.id)?.push(livro);
+      });
+      
+      return generosMap;
     }));
   }
 
+  adicionarLivro(livro: Livro): Observable<Livro>{
+    return this.httpClient.post<Livro>(this.api_URL, livro);
+  }
+  
 }
 
 

@@ -12,6 +12,6 @@
       <app-lista-suspensa label="Gênero" id="genero" formControlName="genero" />
       <app-campo-texto label="Imagem" id="imagem" placeholder="Informe o endereço da imagem" formControlName="imagem" />
     </div>
-    <app-botao tipo="submit" texto="Salvar" />
+    <app-botao tipo="submit" texto="Salvar" (click)="salvarLivro()" />
   </form>
 </section>

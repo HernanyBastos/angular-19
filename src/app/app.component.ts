@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { CabecalhoComponent } from "./componentes/cabecalho/cabecalho.component";
 import { RodapeComponent } from './componentes/rodape/rodape.component';
+import { LivroService } from './services/livro.service';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,10 @@ import { RodapeComponent } from './componentes/rodape/rodape.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'organo';
+  
+  constructor(private livroService: LivroService){}
+  
+  
+  
+
 }

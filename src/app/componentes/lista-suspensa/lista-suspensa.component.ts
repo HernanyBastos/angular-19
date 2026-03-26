@@ -25,7 +25,8 @@ export class ListaSuspensaComponent implements ControlValueAccessor {
       { id: 'misterio', value: 'Mistério' },
       { id: 'fantasia', value: 'Fantasia' },
       { id: 'ficcao-cientifica', value: 'Ficção Científica' },
-      { id: 'tecnicos', value: 'Técnicos' }
+      { id: 'tecnicos', value: 'Técnicos' },
+      { id: 'suspense', value: 'Suspense' },
   ];
 
   private innerValue: any;

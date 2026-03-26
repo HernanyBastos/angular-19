@@ -3,7 +3,7 @@
     <span class="material-icons">{{ livro().favorito ? 'favorite' : 'favorite_border' }}</span>
   </button>
   <div class="imagem">
-    <img [src]="livro().imagem" [alt]="livro().titulo">
+    <img [src]="livro().capa" [alt]="livro().titulo">
   </div>
   <div class="info-livro">
     <h2 class="texto-h2">{{ livro().titulo }}</h2>
