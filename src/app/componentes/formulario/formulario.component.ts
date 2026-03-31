@@ -3,7 +3,7 @@ import { Component, input, OnInit, output, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
-import { GeneroLiterario, Livro } from '../livro/livro';
+import { GeneroLiterario } from '../livro/livro';
 import { CampoTextoComponent } from '../campo-texto/campo-texto.component';
 import { ListaSuspensaComponent } from '../lista-suspensa/lista-suspensa.component';
 import { BotaoComponent } from '../botao/botao.component';
