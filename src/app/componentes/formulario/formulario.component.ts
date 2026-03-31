@@ -35,7 +35,8 @@ export class FormularioComponent implements OnInit {
     { id: 'misterio', value: 'Mistério' },
     { id: 'fantasia', value: 'Fantasia' },
     { id: 'ficcao-cientifica', value: 'Ficção Científica' },
-    { id: 'tecnicos', value: 'Técnicos' }
+    { id: 'tecnicos', value: 'Técnicos' },
+    { id: 'suspense', value: 'Suspense' }
 ];
 
   constructor(
@@ -52,19 +53,19 @@ export class FormularioComponent implements OnInit {
       id: [''],
       titulo: [''],
       autoria: [''],
+      capa: [''],
+      genero: { id: '', value: '' },
       favorito: [false],
-      genero: [''],
-      imagem: ['']
     })
   };
 
   salvarLivro(){
     this.livroService.adicionarLivro(this.livroFormulario.value).subscribe( {
       next: (res: any) => {
-        console.log('Livro adicionado com sucesso', res);
+        this.inicializarlivroFormulario();
       },
       error: (err: any) => {
-        console.error('Erro ao adicionar livro', err);
+        console.error('Erro ao salvar livro:', err);
       }
     })
 

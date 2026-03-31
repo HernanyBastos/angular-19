@@ -29,31 +29,31 @@ export class ListaSuspensaComponent implements ControlValueAccessor {
       { id: 'suspense', value: 'Suspense' },
   ];
 
-  private innerValue: any;
+  private innerValue: GeneroLiterario | null = null;
 
-  get value() {
+  get value(): GeneroLiterario | null {
     return this.innerValue;
   }
 
-  set value(v: any) {
+  set value(v: GeneroLiterario | null) {
     if (v !== this.innerValue) {
       this.innerValue = v;
       this.onChange(v);
     }
   }
 
-  onChange: any = () => { };
-  onTouched: any = () => { };
+  onChange: (value: GeneroLiterario | null) => void = () => { };
+  onTouched: () => void = () => { };
 
-  writeValue(v: string): void {
+  writeValue(v: GeneroLiterario | null): void {
     this.value = v;
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: (value: GeneroLiterario | null) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 }

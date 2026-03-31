@@ -42,8 +42,13 @@ export class LivroService {
     }));
   }
 
-  adicionarLivro(livro: Livro): Observable<Livro>{
+  adicionarLivro(livro: Livro): Observable<Livro> {
     return this.httpClient.post<Livro>(this.api_URL, livro);
+  }
+
+  excluirLivro(id: string): Observable<Livro> {
+    const url = `${this.api_URL}/${id}`;
+    return this.httpClient.delete<Livro>(url);
   }
   
 }

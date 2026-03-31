@@ -44,4 +44,17 @@ export class ListaLivrosComponent implements OnInit {
     }
     })
   }
+
+  excluirLivro(id: string){
+      this.livroService.excluirLivro(id).subscribe(() => {this.atualizarListaLivros(id)});
+  }
+
+  atualizarListaLivros(LivroId: string) {
+    this.generosComLivros = this.generosComLivros.map(({genero, livros}) => {
+      return {
+        genero,
+        livros: livros.filter(livro => livro.id !== LivroId)
+      };
+    });
+  }
 }
